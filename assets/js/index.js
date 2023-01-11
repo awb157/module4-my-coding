@@ -4,7 +4,7 @@ var timerEl = document.querySelector("#timer");
 var time = 90;
 var timeInterval = null;
 
-// question variables
+
 var questionList = document.querySelector("#questionList");
 var question = document.querySelector('#question');
 var option1 = document.querySelector('#option1')
@@ -63,7 +63,7 @@ function countDown() {
 
 
 function timeOff() {
-    time -= 10;
+    time -= 5;
 }
 
 function addPoints() {
@@ -89,7 +89,7 @@ function question1() {
     option4.addEventListener("click", addPoints);
     option4.addEventListener("click", question2);
 }
-// Show Question 2
+
 function question2() {
     question.innerText = questions[1].title;
     option1.innerText = questions[1].options[0];
@@ -159,13 +159,11 @@ function question5() {
     option4.addEventListener("click", enterInitials);
 }
 
-//Stop Timer with Click on Question 5
 function stopTimer() {
     timerEl.textContent = 0;
     clearInterval(timeInterval);
 }
 
-//Score & Enter Initials Variables
 var quizScore = 0;
 var scoreEl = document.querySelector("#score"); 
 var enterInitialsBox = document.querySelector("#enterInitialsBox");
@@ -178,7 +176,6 @@ var clearBtn = document.querySelector("#clearBtn");
 var backBtn = document.querySelector("#backBtn");
 
 
-//function that allows somone to enter initials(hides questions/displays enter initials)
 function enterInitials() {
     wrapper.setAttribute("style", "display: none");
     initials.setAttribute("style", "display: flex");
