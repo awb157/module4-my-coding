@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Austin's Coding Quiz</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header class="hidden-nav">
+        <h2>Time:<span id="timer"></span> </h2>
+
+    </header>
+
+    <section>
+        <div id="wrapper">
+            <h1 class="intro">
+                CODING QUIZ CHALLENGE
+            </h1>
+            <p>
+                Try and answer the coding quiz within the time limit. Keep in mind wrong answers will penalize your
+                score/time by five seconds!!!
+            </p>
+            <button id="startBtn" class="btn">
+                Start
+            </button>
+        </div>
+    </section>
+
+    <div id="questionList" class="hidden">
+        <h1 id="question"></h1>
+        <div class="intro">
+            <button class="btn" id="option1"></button>
+            <button class="btn" id="option2"></button>
+            <button class="btn" id="option3"></button>
+            <button class="btn" id="option4"></button>
+        </div>
+    </div>
+    <div id="initials" class="hidden">
+        <h1>All done!</h1>
+        <span id="score"></span>
+        <label>Enter initials:</label><input type="text" id="initialsInput"></input><br>
+        <button class="btn" id="submitBtn">Submit</button>
+        <p id="msg"></p>
+    </div>
+    <div id="yourScoreBox" class="hidden">
+        <h1>Your Score</h1> 
+        <div id="yourScore"></div>
+        <button class="btn" id="clearBtn">Clear Score</button>
+    </div>
+</div>
+
+    <script src="./assets/js/index.js"></script>
+
+</body>
+
+</html>

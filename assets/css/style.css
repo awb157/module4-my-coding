@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+.highscores {
+  font-size: xx-large;
+}
+
+section {
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: auto;
+}
+
+.hidden-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: red;
+  color: #fff;
+ 
+}
+
+#introText {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.intro {
+  flex-wrap: wrap;
+  text-align: center;
+  font-size: xx-large;
+  color: black;
+}
+
+button {
+color: white;
+background-color: blue;
+font-size: 30px;
+}
+
+
+
+.hidden {
+display: none;
+flex-direction: column;
+}
