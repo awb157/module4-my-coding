@@ -2,7 +2,7 @@
 
 ## Development
 Terversing the DOM and on click events working
-Made a timer for counting down
+Made a timer for counting down as you play a game answering the questions.
 
 ## Links 
-https://github.com/awb157/module4-my-coding
+https://awb157.github.io/module4-my-coding/
