@@ -6,6 +6,7 @@ var startBtn = document.querySelector("#startBtn");
 var timerEl = document.querySelector("#timer");
 // hold the remaining time value
 var time = 90;
+// variable to hold a set intervol so that we can stop it later with a clear intervol
 var timeInterval = null;
 
 //  it looks in the HTML for the element div with the id questionList
@@ -65,6 +66,7 @@ startBtn.addEventListener("click", question1);
 // countDown: updates the time interval by decreasing by one,
 //  updates timer element and sleeps for a second till timer is zero
 function countDown() {
+  // start timer with set interval that subtracks time and updates screen
   timeInterval = setInterval(function () {
     // update text for timer element
     timerEl.textContent = time;
@@ -73,6 +75,7 @@ function countDown() {
     if (time === 0) {
       // set text for the timer element to 0
       timerEl.textContent = 0;
+      // clear interval stops timer when reaches zero
       clearInterval(timeInterval);
       // initiate challenge summation
       enterInitials();
@@ -101,13 +104,13 @@ function question1() {
     "display: flex",
     "justify-content: center"
   );
-
+// populates question title and answers in the question index
   question.innerText = questions[0].title;
   option1.innerText = questions[0].options[0];
   option2.innerText = questions[0].options[1];
   option3.innerText = questions[0].options[2];
   option4.innerText = questions[0].answer;
-
+// add click events to each answer chose 
   option1.addEventListener("click", timeOff);
   option1.addEventListener("click", question2);
   option2.addEventListener("click", timeOff);
@@ -203,6 +206,7 @@ function question5() {
 function stopTimer() {
   // set text for the timer element to 0 after the last question
   timerEl.textContent = 0;
+  // stops timer
   clearInterval(timeInterval);
 }
 
@@ -231,7 +235,8 @@ function enterInitials() {
   scoreEl.textContent = "Your Final Score: " + quizScore;
 }
 
-// add event listeners for the click event on the startBtn
+// add event listeners for the click event on the submitBtn to save score 
+// and iniatials  in local storage
 submitBtn.addEventListener("click", function (event) {
   event.preventDefault();
 
@@ -245,7 +250,7 @@ submitBtn.addEventListener("click", function (event) {
     msgEl.textContent = "Initials cannot be blank";
     return;
   }
-  // showYourScore: display score, hide initials
+  // showYourScore: display score, hide initials input
   function showYourScore() {
     initials.setAttribute("style", "display: none");
     yourScoreBox.setAttribute("style", "display: flex");
@@ -261,7 +266,8 @@ submitBtn.addEventListener("click", function (event) {
     localStorage.clear();
     quizScore = 0;
   }
-
+//  paces score in to local storage 
   localStorage.setItem("records", JSON.stringify(records));
+  // displays all scores from local storage
   showYourScore();
 });
